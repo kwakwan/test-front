@@ -2,7 +2,7 @@ import type { FC } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import Logo from '../assets/lbc-logo.webp'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/home.module.css'
 
 const Home: FC = () => {
   const year = new Date().getFullYear()
@@ -45,7 +45,7 @@ const Home: FC = () => {
           <article className={styles.card}>
             <h2>API Server</h2>
             <p>
-              Start the API server on port <code className={styles.code}>3005</code> by running<br /><code className={styles.code}>npm run start-server</code>.<br/>
+              Start the API server on port <code className={styles.code}>3005</code> by running<br /><code className={styles.code}>npm run start-server</code>.<br />
               Find the swagger definitions in <code className={styles.code}>docs/api-swagger.yml</code> or <a title="API Swagger documentation" href="https://leboncoin.tech/frontend-technical-test/" target="_blank" rel="noopener noreferrer">the online documentation</a>.
             </p>
           </article>
