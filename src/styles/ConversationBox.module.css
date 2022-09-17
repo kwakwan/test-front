@@ -1,0 +1,107 @@
+.conversationBox {
+    display: flex;
+    border: 0.5px solid grey;
+    border-radius: 20px;
+    width: 100%;
+    padding: 16px;
+    background-color: white;
+}
+
+.conversationBox:hover {
+    border-color: darkorange;
+    cursor: pointer;
+}
+
+.avatar {
+    height: 50px;
+    width: 50px;
+    background-color: darkorange;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 20px;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+.avatar2 {
+    height: 30px;
+    width: 30px;
+    font-size: 12px;
+    align-self: flex-end;
+    margin-bottom: 15px;
+    margin-right: 0;
+}
+
+.time {
+    color: gray;
+    margin-top: 8px;
+}
+
+.bubbleBox {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.bubbleBox2 {
+    justify-content: flex-start;
+}
+
+.bubble {
+    border: 0.5px solid grey;
+    border-radius: 20px;
+    max-width: 60%;
+    padding: 16px;
+    margin: 10px;
+}
+
+.ownMsg {
+    background-color: grey;
+    color: white;
+    border: none;
+}
+
+.interlocutorBox {
+    display: flex;
+    align-items: center;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid;
+}
+
+.interlocutor {
+    font-size: 20px;
+}
+
+.arrow {
+    width: 40px;
+    height: 40px;
+    padding-right: 16px;
+    cursor: pointer;
+}
+
+.inputText {
+    width: 90%;
+    border: 1px solid;
+    border-radius: 10px;
+    padding: 8px;
+    padding-left: 20px;
+}
+
+.form {
+    padding-top: 20px;
+    position: sticky;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sendBtn {
+    background-color: lightskyblue;
+    padding: 8px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

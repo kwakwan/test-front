@@ -1,10 +1,8 @@
 .container {
-  min-height: 100vh;
-  padding: 0 0.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  width: 700px;
+  margin: auto;
+  margin-top: 60px;
+  margin-bottom: 60px;
 }
 
 .main {
@@ -36,14 +34,14 @@
 .description a:visited,
 .card a,
 .card a:visited {
-  color:black;
+  color: black;
   text-decoration: underline;
 }
 
 .card:hover a,
 .card:focus a,
 .card:active a {
-  color:#ec6e24;
+  color: #ec6e24;
 }
 
 .code {
@@ -101,11 +99,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: fixed;
+  bottom: 0;
+}
+
+.userBox {
+  margin-bottom: 16px;
 }
 
 @media (max-width: 600px) {
-  .grid {
+  .container {
     width: 100%;
-    flex-direction: column;
+    padding: 0px 16px 0 16px;
+    margin-top: 30px;
   }
 }

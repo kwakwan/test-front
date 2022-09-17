@@ -6,9 +6,20 @@
       "dom.iterable",
       "esnext"
     ],
+    "paths": {
+      "@pages/*": [
+        "src/pages/*"
+      ],
+      "@images/*": [
+        "src/assets/*"
+      ],
+      "@components/*": [
+        "components/*"
+      ],
+    },
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": true,
+    "strict": false,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,

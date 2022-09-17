@@ -53,6 +53,40 @@
       "timestamp": 1620284667,
       "authorId": 2,
       "body": "Bonjour c'est le premier message de la seconde conversation"
+    },
+    {
+      "body": "coucou, je suis là!!!",
+      "timestamp": 0,
+      "authorId": 3,
+      "conversationId": 2,
+      "id": 5
+    },
+    {
+      "body": "coucou, je suis là!!!",
+      "timestamp": 1620284655,
+      "authorId": 4,
+      "conversationId": 3,
+      "id": 6
+    },
+    {
+      "body": "coucou,encore mio!",
+      "timestamp": 1620284655,
+      "authorId": 2,
+      "conversationId": 3,
+      "id": 7
+    },
+    {
+      "body": "test encore",
+      "timestamp": 0,
+      "authorId": 3,
+      "conversationId": 4,
+      "id": 8
+    },
+    {
+      "body": "balblablalbalblabl qldk",
+      "timestamp": 0,
+      "conversationId": 2,
+      "id": 9
     }
   ],
   "users": [
@@ -73,7 +107,7 @@
     },
     {
       "id": 4,
-      "nickname": "Kwan",
+      "nickname": "Elodie",
       "token": "xxxx"
     }
   ]
