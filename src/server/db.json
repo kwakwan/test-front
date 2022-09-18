@@ -23,6 +23,10 @@
       "senderId": 4,
       "senderNickname": "Elodie",
       "lastMessageTimestamp": 1625648667
+    },
+    {
+      "recipientId": 2,
+      "id": 4
     }
   ],
   "messages": [
@@ -87,6 +91,104 @@
       "timestamp": 0,
       "conversationId": 2,
       "id": 9
+    },
+    {
+      "body": "Hello Jeremie!",
+      "authorId": 1,
+      "conversationId": "1",
+      "timestamp": 1663526486195,
+      "id": 10
+    },
+    {
+      "body": "Hello Jeremie! it's me again :)",
+      "authorId": 1,
+      "conversationId": "1",
+      "timestamp": 1663526563878,
+      "id": 11
+    },
+    {
+      "body": "coucou Patrick",
+      "authorId": 1,
+      "conversationId": "2",
+      "timestamp": 1663529332949,
+      "id": 12
+    },
+    {
+      "body": "hohoho",
+      "authorId": 1,
+      "conversationId": "2",
+      "timestamp": 1663529701607,
+      "id": 13
+    },
+    {
+      "body": "hohoho",
+      "authorId": 1,
+      "conversationId": "2",
+      "timestamp": 1663529708292,
+      "id": 14
+    },
+    {
+      "body": "hey ho hey ho",
+      "authorId": 1,
+      "conversationId": "2",
+      "timestamp": 1663529751467,
+      "id": 15
+    },
+    {
+      "body": "c'est encore moi",
+      "authorId": 1,
+      "conversationId": "2",
+      "timestamp": 1663529876476,
+      "id": 16
+    },
+    {
+      "body": "ciao",
+      "authorId": 1,
+      "conversationId": "2",
+      "timestamp": 1663529990359,
+      "id": 17
+    },
+    {
+      "body": "ciao",
+      "authorId": 1,
+      "conversationId": "2",
+      "timestamp": 1663530195842,
+      "id": 18
+    },
+    {
+      "body": "ciaoooo",
+      "authorId": 1,
+      "conversationId": "2",
+      "timestamp": 1663530225106,
+      "id": 19
+    },
+    {
+      "body": "hey hohhooh",
+      "authorId": 1,
+      "conversationId": "2",
+      "timestamp": 1663531289840,
+      "id": 20
+    },
+    {
+      "body": "qsdf",
+      "authorId": 1,
+      "conversationId": "2",
+      "timestamp": 1663531306318,
+      "id": 21
+    },
+    {
+      "body": "hello Elodie",
+      "authorId": 1,
+      "conversationId": "3",
+      "timestamp": 1663532976799,
+      "id": 22
+    },
+    {
+      "body": "salut",
+      "authorId": 1,
+      "conversationId": "3",
+      "timestamp": 1663533131402,
+      "id": 23
     }
   ],
   "users": [
