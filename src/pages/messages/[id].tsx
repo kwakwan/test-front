@@ -1,8 +1,8 @@
-import { ChangeEvent, FC, Fragment, useEffect, useMemo, useRef, useState } from 'react'
+import { FC, Fragment, useEffect, useMemo, useRef, useState } from 'react'
 import { GetStaticPaths, GetStaticPathsResult, GetStaticProps } from 'next'
 import styles from '../../styles/Home.module.css'
 import classes from '../../styles/ConversationBox.module.css'
-import { getAllUsers, getMessagesById, getUserConversations, postMessageInConversation } from '../../services/fetch.service'
+import { getMessagesById, getUserConversations, postMessageInConversation } from '../../services/fetch.service'
 import { Message } from '../../types/message'
 import Layout from '../../components/Layout'
 import MessageBubble from '../../components/MessageBubble'
@@ -27,8 +27,8 @@ interface MessagesProps {
 
 const Messages: FC<MessagesProps> = ({ data }) => {
     const router = useRouter();
-    // const value = useRef<string | undefined>();
     const [allMessages, setMessages]= useState([]);
+    const [interlocutor, setInterlocutor]= useState('');
 
     const { register, handleSubmit, reset } = useForm<FormValues>({ mode: 'onChange', criteriaMode: 'all' })
 
@@ -37,19 +37,17 @@ const Messages: FC<MessagesProps> = ({ data }) => {
       }, })
     
     useEffect(() => {
+        const fetchData = async (id) => {
+            const conversations = await getUserConversations(id);
+            const selectedConversation = conversations.filter((conversation)=> conversation.id == router.query.id);
+            setInterlocutor(selectedConversation[0]?.recipientId !== session.id ? selectedConversation[0]?.recipientNickname : selectedConversation[0]?.senderNickname)
+          };
         if(session){
             setMessages(data);
+            fetchData(session.id)
         }
-      }, [session, data])
+      }, [session, data, router])
 
-    const interlocutor = useMemo(() => {
-        return router.query.interlocutor ? router.query.interlocutor.toString() : null;
-    }, [router.query])
-
-    // const handleInputChange = (event: ChangeEvent<HTMLInputElement>): void => {
-    //     event.persist();
-    //     value.current = event.target.value;
-    // }
 
     const submit = async (values) => {
         try{
@@ -70,7 +68,7 @@ const Messages: FC<MessagesProps> = ({ data }) => {
         <Layout meta={meta}>
             <div className={styles.container}>
                 <div className={classes.stickyTop}>
-                    <ConversationHeader name={interlocutor} goBack={() => router.back()} />
+                    <ConversationHeader name={interlocutor} goBackLink="/all-conversations" />
                 </div>
                     
                 <div className={classes.allMsg}>
@@ -104,12 +102,9 @@ export const getStaticPaths: GetStaticPaths = async (): Promise<GetStaticPathsRe
 }
 
 export const getStaticProps: GetStaticProps = async ({params}) => {
-    try {
         const messages = await getMessagesById(params.id.toString());
+        if( messages.length ==0 )return { notFound: true }
         return { props: { data: messages, } }
-    } catch (e) {
-        throw Error('can not fetch data')
-    }
 }
 
 export default Messages

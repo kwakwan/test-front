@@ -42,9 +42,11 @@ const ConversationsHome: FC = () => {
                 <ConversationHeader name={session?.user?.name} text="All your conversations are here !" logoutBtn={true}/>
                 {data.length>0 ?
                     data.map((conversation: Conversation, index) => (
-                        <a href={`/messages/${conversation.id}?interlocutor=${conversation.recipientNickname === session.user.name ? conversation.senderNickname : conversation.recipientNickname}`} key={index} className={styles.userBox}>
-                            <ConversationBox name={conversation.recipientNickname === session.user.name ? conversation.senderNickname : conversation.recipientNickname} lastMsgTime={new Date(conversation.lastMessageTimestamp)} />
-                        </a>
+                        <Link  key={index} href={`/messages/${conversation.id}`} passHref>
+                            <a className={styles.userBox}>
+                                <ConversationBox name={conversation.recipientNickname === session.user.name ? conversation.senderNickname : conversation.recipientNickname} lastMsgTime={new Date(conversation.lastMessageTimestamp)} />
+                            </a>
+                        </Link>
                     )) : <p>You don&apos;t have any conversation yet.</p>
                 }
             </div>

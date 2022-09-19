@@ -1,26 +1,29 @@
 import { signOut } from "next-auth/react";
 import Head from "next/head";
+import Link from "next/link";
 import { FC, ReactNode } from "react";
 import styles from '../../styles/ConversationBox.module.css';
 
 interface ConversationHeaderProps {
     name: string;
     text?: string;
-    goBack?: () => void;
+    goBackLink?: string
     logoutBtn?:boolean;
 }
 
-const ConversationHeader: FC<ConversationHeaderProps> = ({ name, text, goBack, logoutBtn }) => {
+const ConversationHeader: FC<ConversationHeaderProps> = ({ name, text, goBackLink, logoutBtn }) => {
 
 
     return (
         <div className={styles.interlocutorBox}>
             <div className={styles.nameBox}>
-              {goBack && <div onClick={goBack}>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className={styles.arrow}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-                </svg>
-               </div>}  
+              {goBackLink && <Link href={goBackLink} passHref>
+                    <a>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className={styles.arrow}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                        </svg>   
+                    </a>
+               </Link>}  
                 <div className={styles.avatar}>{name?.charAt(0)}</div>
                 <p className={styles.interlocutor}>{name} {text ? `- ${text}` : null}</p>
             </div>
