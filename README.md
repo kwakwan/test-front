@@ -3,7 +3,7 @@
 This is a front-end test project with :
 - login authentication and logout "/login"
 - listing of user conversations and their messages to their interlocutor "/all-conversations"
-- possibility to reply to a message
+- reply to a message
 
 ### I've covered this topic in this order :
 
