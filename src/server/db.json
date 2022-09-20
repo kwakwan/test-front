@@ -23,10 +23,6 @@
       "senderId": 4,
       "senderNickname": "Elodie",
       "lastMessageTimestamp": 1625648667
-    },
-    {
-      "recipientId": 2,
-      "id": 4
     }
   ],
   "messages": [
@@ -196,6 +192,13 @@
       "conversationId": "3",
       "timestamp": 1663588506368,
       "id": 24
+    },
+    {
+      "body": "wait wait",
+      "authorId": 3,
+      "conversationId": "2",
+      "timestamp": 1663699711147,
+      "id": 25
     }
   ],
   "users": [

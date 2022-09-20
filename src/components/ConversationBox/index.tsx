@@ -8,6 +8,7 @@ interface ConversationBoxProps {
 }
 
 const ConversationBox: FC<ConversationBoxProps> = ({ name, lastMsgTime }) => {
+
     return (
         <div className={styles.conversationBox}>
             <div className={styles.avatar}>{name.charAt(0)}</div>

@@ -17,7 +17,6 @@ const meta = {
     description: "all user conversations"
 }
 
-
 const ConversationsHome: FC = () => {
     const router = useRouter();
     const [data, setData]= useState([]);
@@ -39,16 +38,23 @@ const ConversationsHome: FC = () => {
     return (
         <Layout meta={meta}>
             <div className={styles.container}>
-                <ConversationHeader name={session?.user?.name} text="All your conversations are here !" logoutBtn={true}/>
-                {data.length>0 ?
-                    data.map((conversation: Conversation, index) => (
-                        <Link  key={index} href={`/messages/${conversation.id}`} passHref>
-                            <a className={styles.userBox}>
-                                <ConversationBox name={conversation.recipientNickname === session.user.name ? conversation.senderNickname : conversation.recipientNickname} lastMsgTime={new Date(conversation.lastMessageTimestamp)} />
-                            </a>
-                        </Link>
-                    )) : <p>You don&apos;t have any conversation yet.</p>
-                }
+                {session && (
+                    <>
+                    <ConversationHeader name={session?.user?.name} text="All your conversations are here !" logoutBtn={true}/>
+                    {data.length>0 ?
+                        data.map((conversation: Conversation, index) => (
+                            <Link  key={index} href={`/messages/${conversation.id}`} passHref>
+                                <a className={styles.userBox}>
+                                    <ConversationBox name={conversation.recipientNickname === session.user.name ? conversation.senderNickname : conversation.recipientNickname} lastMsgTime={new Date(conversation.lastMessageTimestamp)} />
+                                </a>
+                            </Link>
+                        )) : <p>You don&apos;t have any conversation yet.</p>
+                    }
+                    </>
+                )}
+                {status == "loading" && (
+                    <p>Loading...</p>
+                )}
             </div>
         </Layout>
     )
