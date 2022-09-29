@@ -68,7 +68,7 @@ const Messages: FC<MessagesProps> = ({ data }) => {
         <Layout meta={meta}>
             <div className={styles.container}>
                 <div className={classes.stickyTop}>
-                    <ConversationHeader name={interlocutor} goBackLink="/all-conversations" />
+                    <ConversationHeader name={interlocutor} goBackLink="/conversations" />
                 </div>
                     
                 <div className={classes.allMsg}>

@@ -1,5 +1,3 @@
-import { Message } from "../types/message";
-
 export const getAllUsers = async () => {
     try {
         const res = await fetch('http://localhost:3005/users')

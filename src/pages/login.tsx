@@ -1,5 +1,4 @@
 import { FC, useEffect, useState } from 'react'
-import Head from 'next/head'
 import Image from 'next/image'
 import Logo from '../assets/lbc-logo.webp'
 import classes from '../styles/Login.module.css'
@@ -26,7 +25,7 @@ const Login: FC = () => {
 
     useEffect(() => {
         if (session) {
-            router.push('/all-conversations')
+            router.push('/conversations')
         }
     }, [router, session])
     
@@ -37,7 +36,7 @@ const Login: FC = () => {
             redirect: false,
             username: values.username,
             password: values.password,
-            callbackUrl: "/all-conversations",
+            callbackUrl: "/conversations",
         });
         if (res?.error) {
             setIsErrorLogin(true);

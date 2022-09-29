@@ -1,14 +1,12 @@
 import { FC, useEffect, useState } from 'react'
 import Layout from '../components/Layout'
-import { GetStaticProps } from 'next'
-import { getAllUsers, getUserById, getUserConversations } from '../services/fetch.service'
-import { User } from '../types/user'
+import { getUserConversations } from '../services/fetch.service'
 import { Conversation } from '../types/conversation'
 import ConversationBox from '../components/ConversationBox'
 import styles from '../styles/Home.module.css'
 import Link from 'next/link'
 import ConversationHeader from '../components/ConversationHeader'
-import { signIn, signOut, useSession } from 'next-auth/react'
+import {useSession } from 'next-auth/react'
 import { useRouter } from 'next/router'
 
 
@@ -17,7 +15,7 @@ const meta = {
     description: "all user conversations"
 }
 
-const ConversationsHome: FC = () => {
+const Conversations: FC = () => {
     const router = useRouter();
     const [data, setData]= useState([]);
     const { data: session ,status } = useSession({ required: true,  onUnauthenticated() {
@@ -61,4 +59,4 @@ const ConversationsHome: FC = () => {
 }
 
 
-export default ConversationsHome
+export default Conversations

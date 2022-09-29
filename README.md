@@ -2,8 +2,13 @@
 
 This is a front-end test project with :
 - login authentication and logout "/login"
-- listing of user conversations and their messages to their interlocutor "/all-conversations"
+- listing of user conversations and their messages to their interlocutor "/conversations"
 - reply to a message
+
+### To run the projet :
+- First, start the API server on port 3005 by running 'npm run start-server'.
+- Second, run 'npm run dev'
+- Then, go to login page '/login'
 
 ### I've covered this topic in this order :
 
