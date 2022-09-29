@@ -1,5 +1,4 @@
-import Head from "next/head";
-import { FC, ReactNode } from "react";
+import { FC} from "react";
 import styles from '../../styles/ConversationBox.module.css';
 
 interface ConversationBoxProps {
