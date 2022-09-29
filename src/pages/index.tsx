@@ -1,7 +1,7 @@
 import type { FC } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
-import Logo from '../assets/lbc-logo.webp'
+import logo from '../assets/lbc-logo.webp'
 import styles from '../styles/home.module.css'
 
 const Home: FC = () => {
@@ -15,7 +15,7 @@ const Home: FC = () => {
       </Head>
 
       <main className={styles.main}>
-        <Image src={Logo} alt="Leboncoin Frontend Team" width={400} height={125} layout="fixed" />
+        <Image src={logo.src} alt="Leboncoin Frontend Team" width={400} height={125} layout="fixed" />
         <h1 className={styles.title}>
           Welcome !
         </h1>

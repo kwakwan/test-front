@@ -1,6 +1,6 @@
 import { FC, useEffect, useState } from 'react'
 import Image from 'next/image'
-import Logo from '../assets/lbc-logo.webp'
+import logo from '../assets/lbc-logo.webp'
 import classes from '../styles/Login.module.css'
 import styles from '../styles/Home.module.css'
 import Layout from '../components/Layout'
@@ -49,7 +49,7 @@ const Login: FC = () => {
     return (
         <Layout meta={meta}>
             <div className={styles.container}>
-            <Image src={Logo} alt="Leboncoin Frontend Team" width={400} height={125} layout="fixed" />
+            <Image src={logo.src} alt="Leboncoin Frontend Team" width={400} height={125} layout="fixed" />
             <h1>Please login here</h1>
             {isErrorLogin && <p className={classes.warning}>Your username or password is incorrect</p>}
                 <form onSubmit={handleSubmit(submit)} >
