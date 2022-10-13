@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import logo from '../assets/lbc-logo.webp'
 import styles from '../styles/Home.module.css'
+import Link from 'next/link'
 
 const Home: FC = () => {
   const year = new Date().getFullYear()
@@ -17,7 +18,7 @@ const Home: FC = () => {
       <main className={styles.main}>
         <Image src={logo.src} alt="Leboncoin Frontend Team" width={400} height={125} layout="fixed" />
         <h1 className={styles.title}>
-          Welcome !
+          Welcome ! To login <Link href='/login' passHref><a>click here</a></Link>
         </h1>
 
         <p className={styles.description}>
