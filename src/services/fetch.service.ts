@@ -1,4 +1,8 @@
-export const getAllUsers = async () => {
+import { Conversation } from '../types/conversation';
+import { Message } from '../types/message';
+import { User } from '../types/user';
+
+export const getAllUsers = async ():Promise<User[]> => {
     try {
         const res = await fetch('http://localhost:3005/users')
         const users = await res.json();
@@ -6,7 +10,7 @@ export const getAllUsers = async () => {
     } catch (e) { console.error(e) }
 }
 
-export const getUserById = async (userId: number) => {
+export const getUserById = async (userId: number):Promise<User>  => {
     try {
         const res = await fetch(`http://localhost:3005/user/${userId}`)
         const user = await res.json();
@@ -14,7 +18,7 @@ export const getUserById = async (userId: number) => {
     } catch (e) { console.error(e) }
 }
 
-export const getUserConversations = async (userId: number) => {
+export const getUserConversations = async (userId: number):Promise<Conversation[]>  => {
     try {
         const res = await fetch(`http://localhost:3005/conversations/${userId}`)
         const users = await res.json();
@@ -22,7 +26,7 @@ export const getUserConversations = async (userId: number) => {
     } catch (e) { console.error(e) }
 }
 
-export const getMessagesById = async (conversationId: string) => {
+export const getMessagesById = async (conversationId: string):Promise<Message[]>  => {
     try {
         const res = await fetch(`http://localhost:3005/messages/${conversationId}`)
         const messages = await res.json();
@@ -30,7 +34,7 @@ export const getMessagesById = async (conversationId: string) => {
     } catch (e) { console.error(e) }
 }
 
-export const postMessageInConversation = async (conversationId: string, userMsg: { authorId: number, body: string }) => {
+export const postMessageInConversation = async (conversationId: string, userMsg: { authorId: number, body: string }):Promise<Message[]>  => {
     const data = {
         body: userMsg.body,
         authorId: userMsg.authorId,

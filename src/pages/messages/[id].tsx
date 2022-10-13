@@ -27,7 +27,7 @@ interface MessagesProps {
 
 const Messages: FC<MessagesProps> = ({ data }) => {
     const router = useRouter();
-    const [allMessages, setMessages]= useState([]);
+    const [allMessages, setMessages]= useState<Message[]>([]);
     const [interlocutor, setInterlocutor]= useState('');
 
     const { register, handleSubmit, reset } = useForm<FormValues>({ mode: 'onChange', criteriaMode: 'all' })
@@ -37,9 +37,9 @@ const Messages: FC<MessagesProps> = ({ data }) => {
       }, })
     
     useEffect(() => {
-        const fetchData = async (id) => {
+        const fetchData = async (id):Promise<void> => {
             const conversations = await getUserConversations(id);
-            const selectedConversation = conversations.filter((conversation)=> conversation.id == router.query.id);
+            const selectedConversation = conversations.filter((conversation)=> conversation.id == Number(router.query.id));
             setInterlocutor(selectedConversation[0]?.recipientId !== session.id ? selectedConversation[0]?.recipientNickname : selectedConversation[0]?.senderNickname)
           };
         if(session){
